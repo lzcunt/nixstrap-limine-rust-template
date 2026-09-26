@@ -29,7 +29,7 @@ static _END_MARKER: RequestsEndMarker = RequestsEndMarker::new();
 unsafe extern "C" fn kmain() -> ! {
     // All limine requests must also be referenced in a called function, otherwise they may be
     // removed by the linker.
-    // assert!(BASE_REVISION.is_supported());
+    assert!(BASE_REVISION.is_supported());
 
     if let Some(framebuffer_response) = FRAMEBUFFER_REQUEST.response() {
         if let Some(framebuffer) = framebuffer_response.framebuffers().first() {
